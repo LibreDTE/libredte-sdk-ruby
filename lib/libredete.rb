@@ -33,8 +33,8 @@ class LibreDTE
     
     @url = URI.parse(url)
     @api_key = api_key
-    @ssl_check = ssl_check
     @http = Net::HTTP.new(@url.host, @url.port)
+    @http.use_ssl = ssl_check
   end
   
   def get (api)
